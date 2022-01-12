@@ -1,66 +1,100 @@
 import replit
-ScaleFactor = 0
-PointOfDilationX = 0
-PointOfDilationY = 0
-PointX = 0
-PointY = 0
-DilatedPointX = 0
-DilatedPointY = 0
-Shape = 0
-PointAX = 0
-PointAY = 0
-PointBX = 0
-PointBY = 0
-PointCX = 0
-PointCY = 0
-APrimeX = 0
-APrimeY = 0
-BPrimeX = 0
-BPrimeY = 0
-CPrimeX = 0
-CPrimeY = 0
+
 while 1==1:
-  ScaleFactor = float(input("What is the scale factor\n"))
-  PointOfDilationX = float(input("What is the point of dilations x coordinate\n"))
-  PointOfDilationY = float(input("What is the point of dilations Y coordinate\n"))
+  Scale = float(input("What is the scale factor\n"))
+  Center = (
+    float(input("What is the Point Of Dilation's X coordinate\n")),
+    float(input("What is the Point Of Dilation's Y Coordinate\n"))
+  )
   Shape = input("Are you Dilating a Triangle or a Point\n T/P\n").lower()
   if Shape == "p":
-    PointX = float(input("What is the Points X coordinate\n"))
-    PointY = float(input("What is the Points Y coordinate\n"))
-    DilatedPointX = ScaleFactor * (PointX - PointOfDilationX) + PointOfDilationX
-    DilatedPointY = ScaleFactor * (PointY - PointOfDilationY) + PointOfDilationY
-    PointXStr = str(PointX)
-    PointYStr = str(PointY)
-    DilatedPointXStr = str(round(DilatedPointX,3))
-    DilatedPointYStr = str(round(DilatedPointY,3))
-    print ("("+ PointXStr +","+ PointYStr +") --> (" + DilatedPointXStr + "," + DilatedPointYStr + ")")
+    Point = (
+      float(input("What is the Points X coordinate\n"))
+      ,
+      float(input("What is the Points Y coordinate\n"))
+    )
+    DilatedPoint =(
+      Scale * (Point[0] - Center[0]) + Center[0]
+      ,
+      Scale * (Point[1] - Center[1]) + Center[1]
+    )
+    PointStr =(
+      str(Point[0])
+      ,
+      str(Point[1])
+    )
+    DilatedPointStr = (
+      str(round(DilatedPoint[0],3))
+      ,
+      str(round(DilatedPoint[1],3))
+    )
+    print ("("+ PointStr[0] +","+ PointStr[1] +") --> (" + DilatedPointStr[0] + "," + DilatedPointStr[1] + ")")
     input("")
     replit.clear()
   if Shape == "t":
-    PointAX = float(input("What is the Point A's X coordinate\n"))
-    PointAY = float(input("What is the Points A's Y coordinate\n"))
-    PointBX = float(input("What is the Point B's X coordinate\n"))
-    PointBY = float(input("What is the Points B's Y coordinate\n"))
-    PointCX = float(input("What is the Point C's X coordinate\n"))
-    PointCY = float(input("What is the Points C's Y coordinate\n"))
-    APrimeX = ScaleFactor * (PointAX - PointOfDilationX) + PointOfDilationX
-    APrimeY = ScaleFactor * (PointAY - PointOfDilationY) + PointOfDilationY
-    BPrimeX = ScaleFactor * (PointBX - PointOfDilationX) + PointOfDilationX
-    BPrimeY = ScaleFactor * (PointBY - PointOfDilationY) + PointOfDilationY
-    CPrimeX = ScaleFactor * (PointCX - PointOfDilationX) + PointOfDilationX
-    CPrimeY = ScaleFactor * (PointCY - PointOfDilationY) + PointOfDilationY
-    PointAXStr = str(PointAX)
-    PointAYStr = str(PointAY)
-    PointBXStr = str(PointBX)
-    PointBYStr = str(PointBY)
-    PointCXStr = str(PointCX)
-    PointCYStr = str(PointCY)
-    APrimeXStr = str(round(APrimeX,3))
-    APrimeYStr = str(round(APrimeY,3))
-    BPrimeXStr = str(round(BPrimeX,3))
-    BPrimeYStr = str(round(BPrimeY,3))
-    CPrimeXStr = str(round(CPrimeX,3))
-    CPrimeYStr = str(round(CPrimeY,3))
-    print ("A(" + PointAXStr  +","+ PointAYStr +") B(" + PointBXStr + "," + PointBYStr + ") C("+ PointCXStr + "," + PointCYStr + ") \n --> A'(" + APrimeXStr + "," + APrimeYStr + ") B'(" + BPrimeXStr + "," + BPrimeYStr + ") C'("+ CPrimeXStr + "," + CPrimeYStr + ")")
+    PointA = (
+      float(input("What is the Point A's X coordinate\n"))
+      ,
+      float(input("What is the Point A's Y coordinate\n"))
+    )
+    PointB = (
+      float(input("What is the Point B's X coordinate\n"))
+      ,
+      float(input("What is the Point B's Y coordinate\n"))
+    )
+    PointC = (
+      float(input("What is the Point C's X coordinate\n"))
+      ,
+      float(input("What is the Point C's Y coordinate\n"))
+    )
+    APrime = (
+     Scale * (PointA[0]- Center[0]) + Center[0]
+      ,
+     Scale * (PointA[1] - Center[1]) + Center[0]
+    )
+    BPrime = (
+     Scale * (PointB[0]- Center[0]) + Center[0]
+      ,
+     Scale * (PointB[1] - Center[1]) + Center[0]
+    )
+    CPrime = (
+     Scale * (PointC[0]- Center[0]) + Center[0]
+      ,
+     Scale * (PointC[1] - Center[1]) + Center[0]
+    )
+    PointAStr = (
+     str(PointA[0])
+     ,
+     str(PointA[1])
+    )
+    PointBStr = (
+     str(PointB[0])
+     ,
+     str(PointB[1])
+    )
+    PointCStr = (
+     str(PointC[0])
+     ,
+     str(PointC[1])
+    )
+    APrimeStr = (
+     str(APrime[0])
+     ,
+     str(APrime[1])
+    )
+    BPrimeStr = (
+     str(BPrime[0])
+     ,
+     str(BPrime[1])
+    )
+    CPrimeStr = (
+     str(CPrime[0])
+     ,
+     str(CPrime[1])
+    )
+    replit.clear()
+    print ("A(" + PointAStr[0] + "," + PointAStr[1] + ") --> A'(" + APrimeStr[0] + "," + APrimeStr[1] + ")\n")
+    print ("B(" + PointBStr[0] + "," + PointBStr[1] + ") --> B'(" + BPrimeStr[0] + "," + BPrimeStr[1] + ")\n")
+    print ("C(" + PointCStr[0] + "," + PointCStr[1] + ") --> C'(" + CPrimeStr[0] + "," + CPrimeStr[1] + ")\n")
     input("")
     replit.clear()
