@@ -111,9 +111,67 @@ while 1==1:
       replit.clear()
     else:
       print("I don't know that one")
+  #Reflections
   elif Transformation == "re":
     print ("This currently only works with straight lines on one axis")
-    ReflectionAxis = input("Is your line to reflect on parralel to the y axis or the x axis\n (X/Y)").lower()
-    if ReflectionAxis == "x":
-      print ("hello world")
-
+    Shape = input("Are you reflecting a Triangle or a Point\n (T/P)\n").lower()
+    ReflectionAxis = input("Is your line to reflect on parralel to the y axis or the x axis\n (X/Y)\n").lower()
+    if Shape == "t":
+      if ReflectionAxis == "x":
+        print ("hello world")
+      elif ReflectionAxis == "y":
+        print ("world hello")
+      else:
+        print ("I dont know that one")
+    elif Shape == "p":
+      Point = (
+        float(input("What is the points X value\n"))
+        ,
+        float(input("What is the points Y Value\n"))
+      )
+      if ReflectionAxis == "x":
+        RC = float(input("What is the Reflections Y Coordinate\n"))
+        RP = str(RC - (Point[1] - RC))
+        PointStr = (
+          str(Point[0])
+          ,
+          str(Point[1])
+        )
+        print ("(" + PointStr[0] + "," + PointStr[1] + ") -> (" + PointStr[0] + "," + RP + ")")
+      elif ReflectionAxis == "y":
+        RC = float(input("What is the Reflections X Coordinate\n"))
+        RP = str(RC - (Point[0] - RC))
+        PointStr = (
+          str(Point[0])
+          ,
+          str(Point[1])
+        )
+        print ("(" + PointStr[0] + "," + PointStr[1] + ") -> (" + RP + "," + PointStr[1] + ")")
+      else:
+        print ("I dont know that one")
+    else:
+      print ("I dont know that one")
+  #Translations
+  elif Transformation == "tr":
+    Point = (
+      float(input("What is the points X Value\n"))
+      ,
+      float(input("What is the Points Y Value\n"))
+    )
+    TC = (
+      float(input("What is the Translations X Coordinate\n"))
+      ,
+      float(input("What is the Translations Y Coordinate\n"))
+    )
+    TP = (
+      str(Point[0] + TC[0])
+      ,
+      str(Point[1] + TC[1])
+    )
+    PointStr = (
+      str(Point[0])
+      ,
+      str(Point[1])
+    )
+    input("(" + PointStr[0] + "," + PointStr[1] + ") -> (" + TP[0] + "," + TP[1] + ")\n")
+    
